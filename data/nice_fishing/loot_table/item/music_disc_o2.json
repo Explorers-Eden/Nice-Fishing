@@ -1,0 +1,29 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:music_disc_5",
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "nice_fishing": {
+                    "item": "music_disc_o2"
+                  }
+                },
+                "minecraft:item_model": "nice_fishing:music_disc_o2",
+                "minecraft:max_stack_size": 1,
+                "minecraft:rarity": "rare",
+                "minecraft:jukebox_playable": "nice_fishing:o2"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

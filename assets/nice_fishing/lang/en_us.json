@@ -1,0 +1,26 @@
+{
+   "item.nice_fishing.bumblebass": "Bumblebass",
+   "item.nice_fishing.charged_creelper": "Charged Creelper",
+   "item.nice_fishing.copper_fishing_rod": "Copper Fishing Rod",
+   "item.nice_fishing.cornflower_tadpetal": "Cornflower Tadpetal",
+   "item.nice_fishing.creelper": "Creelper",
+   "item.nice_fishing.dandelion_tadpetal": "Dandelion Tadpetal",
+   "item.nice_fishing.diamond_fishing_rod": "Diamond Fishing Rod",
+   "item.nice_fishing.golden_fishing_rod": "Golden Fishing Rod",
+   "item.nice_fishing.grass_grounder": "Grass Grounder",
+   "item.nice_fishing.heavy_fishing_rod": "Heavy Fishing Rod",
+   "item.nice_fishing.iron_fishing_rod": "Iron Fishing Rod",
+   "item.nice_fishing.netherite_fishing_rod": "Netherite Fishing Rod",
+   "item.nice_fishing.paddlamp": "paddlamp",
+   "item.nice_fishing.phantuna": "phantuna",
+   "item.nice_fishing.podzol_grounder": "Podzol Grounder",
+   "item.nice_fishing.poppy_tadpetal": "Poppy Tadpetal",
+   "item.nice_fishing.skeletin": "Skeletin",
+   "item.nice_fishing.snowy_grounder": "Snowy Grounder",
+
+   "text.nice_fishing.lore.size": "Size",
+   "text.nice_fishing.lore.unit": "cm",
+   "text.nice_fishing.lore.caught_by": "Caught By",
+   "text.nice_fishing.lore.location": "Location",
+   "text.nice_fishing.lore.quality": "Quality"
+}

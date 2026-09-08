@@ -1,0 +1,11 @@
+{
+  "model": {
+    "type": "minecraft:composite",
+    "models": [
+      {
+        "type": "minecraft:model",
+        "model": "nice_fishing:item/dandelion_tadpetal"
+      }
+    ]
+  }
+}

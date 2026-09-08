@@ -1,0 +1,9 @@
+execute if items entity @s hotbar.0 minecraft:music_disc_5[minecraft:custom_data={nice_fishing:{"item":"fish"}}] run function nice_fishing:apply_fish_values/hotbar/slot_0
+execute if items entity @s hotbar.1 minecraft:music_disc_5[minecraft:custom_data={nice_fishing:{"item":"fish"}}] run function nice_fishing:apply_fish_values/hotbar/slot_1
+execute if items entity @s hotbar.2 minecraft:music_disc_5[minecraft:custom_data={nice_fishing:{"item":"fish"}}] run function nice_fishing:apply_fish_values/hotbar/slot_2
+execute if items entity @s hotbar.3 minecraft:music_disc_5[minecraft:custom_data={nice_fishing:{"item":"fish"}}] run function nice_fishing:apply_fish_values/hotbar/slot_3
+execute if items entity @s hotbar.4 minecraft:music_disc_5[minecraft:custom_data={nice_fishing:{"item":"fish"}}] run function nice_fishing:apply_fish_values/hotbar/slot_4
+execute if items entity @s hotbar.5 minecraft:music_disc_5[minecraft:custom_data={nice_fishing:{"item":"fish"}}] run function nice_fishing:apply_fish_values/hotbar/slot_5
+execute if items entity @s hotbar.6 minecraft:music_disc_5[minecraft:custom_data={nice_fishing:{"item":"fish"}}] run function nice_fishing:apply_fish_values/hotbar/slot_6
+execute if items entity @s hotbar.7 minecraft:music_disc_5[minecraft:custom_data={nice_fishing:{"item":"fish"}}] run function nice_fishing:apply_fish_values/hotbar/slot_7
+execute if items entity @s hotbar.8 minecraft:music_disc_5[minecraft:custom_data={nice_fishing:{"item":"fish"}}] run function nice_fishing:apply_fish_values/hotbar/slot_8

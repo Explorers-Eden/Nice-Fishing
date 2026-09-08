@@ -1,0 +1,89 @@
+name: Publish Release
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install pyyaml requests
+
+      - name: Read release metadata
+        id: meta
+        run: python tools/scripts/read-release-metadata.py
+
+      - name: Build datapack zip and universal mod jar
+        env:
+          ZIP_NAME: ${{ steps.meta.outputs.zip_name }}
+          JAR_NAME: ${{ steps.meta.outputs.jar_name }}
+          VERSION_NUMBER: ${{ steps.meta.outputs.version_number }}
+          PROJECT_ID: ${{ steps.meta.outputs.project_id }}
+          MOD_ID: ${{ steps.meta.outputs.mod_id }}
+          NAMESPACE: ${{ steps.meta.outputs.namespace }}
+          SLUG: ${{ steps.meta.outputs.slug }}
+          NAME: ${{ steps.meta.outputs.name }}
+          DESCRIPTION: ${{ steps.meta.outputs.description }}
+          ICON: ${{ steps.meta.outputs.icon }}
+        run: python tools/scripts/build-release-artifacts.py
+
+      - name: Create or update GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG_NAME: ${{ steps.meta.outputs.tag_name }}
+          RELEASE_NAME: ${{ steps.meta.outputs.release_name }}
+          CHANGELOG_PATH: ${{ steps.meta.outputs.changelog_path }}
+          ZIP_NAME: ${{ steps.meta.outputs.zip_name }}
+          JAR_NAME: ${{ steps.meta.outputs.jar_name }}
+          IS_PRERELEASE: ${{ steps.meta.outputs.is_prerelease }}
+        run: bash tools/scripts/create-or-update-github-release.sh
+
+      - name: Upload datapack version to Modrinth
+        env:
+          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+          PROJECT_ID: ${{ steps.meta.outputs.project_id }}
+          VERSION_NUMBER: ${{ steps.meta.outputs.version_number }}
+          RELEASE_NAME: ${{ steps.meta.outputs.release_name }}
+          VERSION_TYPE: ${{ steps.meta.outputs.version_type }}
+          CHANGELOG_PATH: ${{ steps.meta.outputs.changelog_path }}
+          GAME_VERSIONS_JSON: ${{ steps.meta.outputs.game_versions_json }}
+          FILE_NAME: ${{ steps.meta.outputs.zip_name }}
+          LOADERS_JSON: '["datapack"]'
+          FILE_MIME_TYPE: application/zip
+          MODRINTH_UPLOAD_LABEL: datapack
+        run: python tools/scripts/upload-version-to-modrinth.py
+
+      - name: Upload universal mod version to Modrinth
+        env:
+          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+          PROJECT_ID: ${{ steps.meta.outputs.project_id }}
+          VERSION_NUMBER: ${{ steps.meta.outputs.mod_version_number }}
+          RELEASE_NAME: ${{ steps.meta.outputs.mod_release_name }}
+          VERSION_TYPE: ${{ steps.meta.outputs.version_type }}
+          CHANGELOG_PATH: ${{ steps.meta.outputs.changelog_path }}
+          GAME_VERSIONS_JSON: ${{ steps.meta.outputs.game_versions_json }}
+          FILE_NAME: ${{ steps.meta.outputs.jar_name }}
+          LOADERS_JSON: '["fabric", "forge", "quilt", "neoforge"]'
+          FILE_MIME_TYPE: application/java-archive
+          MODRINTH_UPLOAD_LABEL: universal mod
+        run: python tools/scripts/upload-version-to-modrinth.py
+
+      - name: Update README from Modrinth description
+        env:
+          PROJECT_ID: ${{ steps.meta.outputs.project_id }}
+        run: python tools/scripts/update-readme-from-modrinth.py
+
+      - name: Commit README update
+        run: bash tools/scripts/commit-readme-update.sh

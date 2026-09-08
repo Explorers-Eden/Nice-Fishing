@@ -1,0 +1,46 @@
+{
+  "type": "minecraft:command",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:music_disc_5",
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:item_name": {
+                  "translate": "item.nice_fishing.skeletin"
+                },
+                "minecraft:item_model": "nice_fishing:skeletin",
+                "minecraft:custom_data": {
+                  "nice_fishing": {
+                    "item": "fish"
+                  }
+                },
+                "!minecraft:jukebox_playable": {},
+                "minecraft:tooltip_style": "nice_fishing:default",
+                "minecraft:food": {
+                  "nutrition": 1,
+                  "saturation": 0.2,
+                  "can_always_eat": false
+                },
+                "minecraft:use_remainder": {
+                  "id": "minecraft:bone",
+                  "count": 1
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 2,
+                  "animation": "eat",
+                  "has_consume_particles": true
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

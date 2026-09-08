@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:command",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:fishing_rod",
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:item_name": {
+                  "translate": "item.nice_fishing.netherite_fishing_rod"
+                },
+                "minecraft:item_model": "nice_fishing:netherite_fishing_rod",
+                "minecraft:custom_data": {
+                  "nice_fishing": {
+                    "item": "netherite_fishing_rod"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
