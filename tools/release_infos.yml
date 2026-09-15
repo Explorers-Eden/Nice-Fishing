@@ -1,6 +1,6 @@
 Project-ID: lGXkbPM6
 Mod-ID: mr_nice_fishing
-Namespace: admin
+Namespace: nice_fishing
 Slug: nice-fishing
 Name: Nice Fishing
 
@@ -11,4 +11,4 @@ Meta Data:
 Details:
   Version type: Release
   Version number: 1.0
-  Version subtitle: "Initial Release"
+  Version subtitle: "The Wilderness Bound Update"

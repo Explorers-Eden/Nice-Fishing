@@ -12,10 +12,10 @@
                             "components": {
                                 "minecraft:item_name": {
                                     "fallback": "Nautilus Helmet",
-                                    "translate": "item.nice_mobs.nautilus_helmet"
+                                    "translate": "item.nice_fishing.nautilus_helmet"
                                 },
-                                "minecraft:custom_data": "{nice_mobs:nautilus_helmet}",
-                                "minecraft:item_model": "nice_mobs:nautilus_helmet",
+                                "minecraft:custom_data": "{nice_fishing:nautilus_helmet}",
+                                "minecraft:item_model": "nice_fishing:nautilus_helmet",
                                 "minecraft:max_stack_size": 1,
                                 "minecraft:rarity": "rare",
                                 "minecraft:equippable": {
