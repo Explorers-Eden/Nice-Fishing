@@ -1,6 +1,5 @@
 {
   "values": [
-    "nice_fishing:apply_fish_values/init",
     "nice_fishing:load"
   ]
 }
